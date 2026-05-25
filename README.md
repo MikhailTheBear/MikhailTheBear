@@ -45,9 +45,9 @@ Tools & Technologies:
 
 ## 📊 GitHub Stats
 
-[![MikhailTheBear's GitHub stats](https://github-readme-stats.vercel.app/api?username=MikhailTheBear)](https://github.com/MikhailTheBear/github-readme-stats)
+[![MikhailTheBear's GitHub stats](https://github-readme-stats.vercel.app/api?username=mikhailthebear)](https://github.com/mikhailthebear/github-readme-stats)
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=MikhailTheBear&layout=compact&theme=tokyonight)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=mikhailthebear&layout=compact&theme=tokyonight)
 
 ---
 
