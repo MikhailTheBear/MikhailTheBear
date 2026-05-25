@@ -45,9 +45,9 @@ Tools & Technologies:
 
 ## 📊 GitHub Stats
 
-![Stats](https://github-readme-stats.vercel.app/api?username=MikhailTheBear\&show_icons=true\&theme=tokyonight)
+![Stats](https://github-readme-stats.vercel.app/api?username=MikhailTheBear&show_icons=true&theme=tokyonight)
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=MikhailTheBear\&layout=compact\&theme=tokyonight)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=MikhailTheBear&layout=compact&theme=tokyonight)
 
 ---
 
