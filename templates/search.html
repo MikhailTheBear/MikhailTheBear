@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Поиск пользователей{% endblock %}
+
+{% block content %}
+<div class="container py-4" style="max-width: 800px;">
+
+    <!-- Заголовок -->
+    <div class="d-flex align-items-center mb-4 pb-3 border-bottom">
+        <i class="bi bi-people-fill fs-3 text-primary me-3"></i>
+        <div>
+            <h4 class="mb-0">Поиск пользователей</h4>
+            <small class="text-muted">Найдите собеседника и начните чат</small>
+        </div>
+    </div>
+
+    <!-- Форма поиска -->
+    <form method="GET" class="mb-4">
+        <div class="input-group input-group-lg shadow-sm rounded-4 overflow-hidden">
+            {{ form.query(class="form-control border-0", placeholder="Введите имя пользователя...") }}
+            {{ form.submit(class="btn btn-primary px-4", value="➤") }}
+        </div>
+    </form>
+
+    <!-- Результаты -->
+    {% if users %}
+        <div class="list-group list-group-flush rounded-4 shadow-sm overflow-hidden">
+            {% for user in users %}
+                <a href="{{ url_for('chat', username=user.username) }}"
+                   class="list-group-item list-group-item-action d-flex align-items-center py-3 border-0 border-bottom">
+                    <img src="{{ url_for('static', filename='avatars/' + (user.avatar or 'default.jpg')) }}"
+                         class="rounded-circle me-3"
+                         style="width: 50px; height: 50px; object-fit: cover;">
+                    <div class="flex-grow-1">
+                        <strong class="d-block">{{ user.username }}</strong>
+                        <small class="text-muted">Нажмите, чтобы открыть чат</small>
+                    </div>
+                    <i class="bi bi-chevron-right text-muted"></i>
+                </a>
+            {% endfor %}
+        </div>
+    {% elif form.query.data %}
+        <div class="text-center text-muted py-5">
+            <i class="bi bi-search" style="font-size: 2.5rem;"></i>
+            <p class="mt-3 mb-0">Пользователи не найдены.</p>
+            <small>Попробуйте изменить запрос.</small>
+        </div>
+    {% else %}
+        <div class="text-center text-muted py-5">
+            <i class="bi bi-person-plus" style="font-size: 2.5rem;"></i>
+            <p class="mt-3 mb-0">Начните вводить имя пользователя</p>
+            <small>Результаты появятся здесь.</small>
+        </div>
+    {% endif %}
+
+</div>
+
+<style>
+    .list-group-item-action {
+        transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+    .list-group-item-action:hover {
+        background-color: #f8f9fa;
+        transform: translateX(2px);
+    }
+    .list-group-item-action:last-child {
+        border-bottom: 0 !important;
+    }
+    .input-group .form-control:focus {
+        box-shadow: none;
+    }
+    .input-group:focus-within {
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15) !important;
+    }
+</style>
+{% endblock %}

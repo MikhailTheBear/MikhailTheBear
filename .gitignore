@@ -1,0 +1,7 @@
+config.py
+social.db
+__pycache__
+migrations
+static/posts/*
+static/avatars/*
+static/bearcord/*

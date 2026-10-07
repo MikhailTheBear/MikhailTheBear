@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Вход через BearCord</title>
+
+    <style>
+        body {
+            margin: 0;
+
+            background: #0b0b0b;
+            color: #ffffff;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(90%, 420px);
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: 32px;
+        }
+
+        p {
+            margin: 0;
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        .spinner {
+            margin: 28px auto 0;
+
+            width: 32px;
+            height: 32px;
+
+            border: 3px solid #333;
+            border-top-color: #ffd000;
+
+            border-radius: 50%;
+
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🐻 BearCord</h1>
+
+    <p>
+        Перенаправляем в приложение…
+    </p>
+
+    <div class="spinner"></div>
+
+</div>
+
+<script>
+    (function () {
+        'use strict';
+
+        var jsonUrl = "http://192.168.1.43:1212/{{ url_for('static', filename='bearcord/auth_data_for_bearcord.json') }}";
+
+        var authUrl =
+            'bearcord://auth?auth_data=' + encodeURIComponent(jsonUrl);
+
+        // Автоматический редирект в приложение BearCord
+        window.location.href = authUrl;
+    })();
+</script>
+
+</body>
+</html>
