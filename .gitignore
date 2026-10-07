@@ -5,3 +5,4 @@ migrations
 static/posts/*
 static/avatars/*
 static/bearcord/*
+.vscode
